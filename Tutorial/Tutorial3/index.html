@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <!-- 雙向綁定 -->
+  <input type="text" v-model="name">
+  <p>{{name}}</p>
+  <button v-on:click="counter++">Increase</button>
+  <!-- v-on縮寫為@ -->
+  <button @click="counter--">Decrease</button>
+  <button @click="secondCounter++">Increase Second</button>
+  <!-- v-bind縮寫為: -->
+  <a :href="searchLink">Goole</a>
+
+  <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+  <!--   computed中的function不用後面的() -->
+  <p>Result:{{ result() }} | {{ output }}</p>
+</div>
+<script src="app.js"></script>

@@ -1,0 +1,15 @@
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+<div id="app">
+  <!-- class綁定，可分{css中的class: true或false} -->
+  <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed}"></div>
+  <!-- class綁定，也可透過data中的屬性或computed設定 -->
+  <div class="demo" :class = "divClasses"></div>
+  <div class="demo" :class = "color"></div>
+  <!-- class綁定，也可複數個 -->
+  <div class="demo" :class = "[color,{red: attachRed}]"></div>
+  <hr>
+  <input type="text" v-model="color">
+</div>
+<script src="app.js"></script>

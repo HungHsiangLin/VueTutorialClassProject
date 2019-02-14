@@ -1,0 +1,15 @@
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+<div id="app">
+ <!-- v-bind:style的對象語法十分直觀——看著非常像CSS，其實它是一個JavaScript 對象。CSS 屬性名可以用駝峰式（camelCase）或短橫分隔命名（kebab-case）： -->
+  <div class="demo" :style="{backgroundColor:color}"></div>
+  <!-- 也可透過data中的屬性或computed設定-->
+  <div class="demo" :style="myStyle"></div>
+  <!-- 也可提供複數個樣式-->
+  <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+<hr>
+<input type="text" v-model="color">
+<input type="text" v-model="width">
+</div>
+<script src="app.js"></script>
