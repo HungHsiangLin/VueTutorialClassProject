@@ -1,0 +1,14 @@
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<div id="app">
+ <!--  v-once只渲染一次 -->
+  <h1 v-once>{{title}}</h1>
+  <!-- v-on綁定method於element上 -->
+  <input type="text" v-on:input="changeTitle">
+  
+  <!-- 雙括號可以顯示data或是methods回傳的值，v-bind可以綁定data的值 -->
+  <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+  
+  <!-- 輸出為html格式，而不是只是文本 -->
+  <p v-html="finishedLink"></p>
+</div>
+<script src="app.js"></script>
