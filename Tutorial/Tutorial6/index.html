@@ -1,0 +1,43 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <ul>
+    <!-- v-for可以渲染一整個陣列內容 -->
+    <li v-for="ingredient in ingredients">{{ ingredient }}</li>
+  </ul>
+  <hr>
+  <ul>
+    <!-- 也可取得該陣列該element的index -->
+    <li v-for="(ingredient,i) in ingredients">{{ ingredient }} ({{ i }})</li>
+  </ul>
+  <!-- 當push值到陣列中時，v-for也依然會監聽到 -->
+  <button @click="ingredients.push('spices')">Add New</button>
+  <hr>
+    <!-- 在父節點中 也可透過v-for循序渲染 -->
+  <template v-for="(ingredient,i) in ingredients">
+    <h5>{{ ingredient }}</h5>
+    <p>{{ i }}</p>
+  </template>
+  
+  <hr>
+  <ul>
+   <!-- 對象為object 也可透過v-for循序渲染 -->
+    <li v-for="person in persons">
+      <h3 v-for="value in person">{{ value }}</h3>
+    </li>
+  </ul>
+  <hr>
+    <ul>
+   <!-- 也可取得該object的key及index -->
+    <li v-for="person in persons">
+      <h3 v-for="(value,key,index) in person">{{　key　}}: {{ value }}({{ index }})</h3>
+    </li>
+  </ul>
+  <hr>
+  <!-- v-for可單純對數字做循序 -->
+  <span v-for="n in times">{{ n }} </span>
+
+</div>
+
+
+<script src="app.js"></script>

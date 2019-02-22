@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <!-- v-if是會將該節點remove而不是hide -->
+  <!-- 透過v-if、v-else-if、v-else來做簡易判斷是否渲染 -->
+  <p v-if="show">You can see me!</p>
+  <p v-else>Now you see me!</p>
+
+  <!-- 在父節點 中 可透過v-if、v-else-if、v-else 控制內部所有的element()-->
+  <template v-if="show">
+    <h1>Heading</h1>
+    <p>Inside a template</p>
+  </template>
+
+  <p v-show="show">Do you also see me?</p>
+  <button @click="show = !show">switch</button>
+</div>
+
+<script src="app.js"></script>
